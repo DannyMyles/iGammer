@@ -1,0 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/cf-jack-story');
+* {
+	box-sizing: border-box;
+	
+}
+body {
+	margin: 0;
+	padding: 0;
+	background:#fff;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.5rem;	
+	font-size: 20px;
+}
+.i-word{
+	font-style: italic;
+	font-size: larger;
+	font-weight: 900;
+	color: rgb(247, 158, 4);
+  }

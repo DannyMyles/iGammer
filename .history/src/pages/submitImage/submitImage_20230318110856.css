@@ -1,0 +1,35 @@
+.upload-container{
+  border: 1px solid red;
+  margin: 2rem;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+form{
+  padding: 40px;
+  height: 50%;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="file"] {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .image-preview {
+    margin-top: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .image-preview img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  

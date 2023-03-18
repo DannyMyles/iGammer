@@ -1,0 +1,24 @@
+.carousel {
+  display: flex;
+  /* overflow-x: scroll; */
+  scroll-behavior: smooth;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-right: 16px;
+}
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-right: 16px;
+}

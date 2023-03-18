@@ -1,0 +1,76 @@
+.main-container {
+  max-width: 100vw;
+  justify-content: space-between;
+}
+
+.submit-image {
+  padding: 1.2rem;
+  width: 10vw;
+  margin-right: 10rem;
+  outline: none;
+  border: none;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.home-content-inner {
+  padding-bottom: 1rem;
+}
+.home-button button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 20px 40px;
+  box-shadow: 0 2px 5px rgba(232, 13, 13, 0.9);
+  transition: all 0.3s ease-in-out;
+}
+.home-button button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.home-button button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease-in-out;
+}
+.home-button button:hover::after {
+  opacity: 1;
+}
+.first-cont {
+  display: flex;
+  margin-top: 0.7rem;
+  justify-content: space-around;
+}
+span {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+.home-image img {
+  width: 20vw;
+}
+.patent button {
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-left: 50rem;
+  margin-bottom: 0.5rem;
+  padding: 10px 50px;
+  border-radius: 2.2rem;
+  border: 1px solid #ccc;
+}

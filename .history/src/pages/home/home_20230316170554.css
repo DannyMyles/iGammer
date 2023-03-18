@@ -1,0 +1,11 @@
+.main-container{
+    max-width: 100vh;
+    justify-content: space-between;
+}
+
+button{
+    padding: 1rem;
+}
+.first-cont{
+    display: flex;
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+* {
+	box-sizing: border-box;
+	
+}
+body {
+	margin: 0;
+	padding: 0;
+	/* background-image: linear-gradient(#bdc3c7 → #2c3e50); */
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.5rem;	
+	font-size: 20px;
+}
+.i-word{
+	font-style: italic;
+	font-size: larger;
+	font-weight: 900;
+	color: rgb(247, 158, 4);
+  }

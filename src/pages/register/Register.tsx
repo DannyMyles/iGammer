@@ -1,5 +1,7 @@
 import "./register.css";
 import { useState } from "react";
+import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
 
 type RegistrationProps = {
   onSubmit: (
@@ -21,6 +23,8 @@ const Register = ({ onSubmit }: RegistrationProps) => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="register-container">
       <form className="registration-form" onSubmit={handleRegistration}>
         <h2>Register</h2>
@@ -59,6 +63,9 @@ const Register = ({ onSubmit }: RegistrationProps) => {
         <button type="submit">Register</button>
       </form>
     </div>
+    <Footer />
+    </>
+    
   );
 };
 

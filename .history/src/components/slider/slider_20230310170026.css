@@ -1,0 +1,23 @@
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-right: 16px;
+}
+@media (max-width: 768px) {
+  .carousel {
+    display: block;
+    overflow-x: hidden;
+  }
+
+  .carousel img {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
