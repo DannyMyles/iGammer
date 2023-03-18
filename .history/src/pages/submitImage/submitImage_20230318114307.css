@@ -9,12 +9,12 @@
   padding: 4rem;
   height: 100%;
 }
-.upload-container label {
-  margin-bottom: 0.5rem;
+label {
+  /* margin-bottom: 0.5rem; */
   font-weight: bold;
   font-size: 1.2rem;
   text-align: left;
-  /* padding: 1rem; */
+  padding: 1rem;
 }
 
 input[type="file"] {
