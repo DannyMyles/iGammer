@@ -1,7 +1,6 @@
 import "./slider.css";
 import "react-multi-carousel/lib/styles.css";
-import { useState } from "react";
-const Slider = ({ images }:any) => {
+const Slider = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {

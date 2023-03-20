@@ -12,7 +12,7 @@ const Home = () => {
      navigate("/SubmitImage");
    };
   
-  const [image, setImage] = useState([ ])
+  const [image, setmage] = useState([ ])
   return (
     <>
       <Navbar />
@@ -40,7 +40,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Slider images={image}/>
+      <Slider />
       <div className="first-cont">
         <div className="home-image">
           <img src="assets/images/mm1.png" alt="" />

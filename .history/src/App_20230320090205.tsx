@@ -39,7 +39,17 @@ function App() {
         path="/registration"
         element={<Register onSubmit={handleRegistration} />}
       />
-      <Route path="*" element={<NotFound />} />
+      <Route path="" import React from 'react'
+      
+      export const Component = (props) => {
+        return(
+          <div>
+            {props.children}
+          </div>
+        )
+      }
+      
+      export default Component={<NotFound />} />
     </Routes>
   );
 }

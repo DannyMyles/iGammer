@@ -39,7 +39,7 @@ function App() {
         path="/registration"
         element={<Register onSubmit={handleRegistration} />}
       />
-      <Route path="*" element={<NotFound />} />
+      <Route path="/" element={<NotFound />} />
     </Routes>
   );
 }

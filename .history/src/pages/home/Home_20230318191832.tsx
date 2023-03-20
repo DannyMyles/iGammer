@@ -40,7 +40,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Slider images={image}/>
+      <Slider image={/>
       <div className="first-cont">
         <div className="home-image">
           <img src="assets/images/mm1.png" alt="" />

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
@@ -12,7 +11,7 @@ const Home = () => {
      navigate("/SubmitImage");
    };
   
-  const [image, setImage] = useState([ ])
+  const [first, setfirst] = useState(second)
   return (
     <>
       <Navbar />
@@ -40,7 +39,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Slider images={image}/>
+      <Slider />
       <div className="first-cont">
         <div className="home-image">
           <img src="assets/images/mm1.png" alt="" />
