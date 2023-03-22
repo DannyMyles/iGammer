@@ -1,0 +1,22 @@
+.browse-container{
+    display: flex;
+    background-color: #e5e5e5;
+    height: 80vh;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+.left-container{
+    background-color: green;
+    width: 400px;
+    height: 400px;
+}
+.center-container{
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+}
+.right-container{
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+}

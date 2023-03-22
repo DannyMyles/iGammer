@@ -1,0 +1,23 @@
+.browse-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    height: 80vh;
+    margin-bottom: .5rem;
+    gap: 2rem;
+}
+.left-container{
+    background-color: green;
+    width: 400px;
+    height: 400px;
+}
+.center-container{
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+}
+.right-container{
+    background-color: yellow;
+    width: 400px;
+    height: 400px;
+}

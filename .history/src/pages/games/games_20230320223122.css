@@ -1,0 +1,28 @@
+.game-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 80vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+.tiles-container{
+    background-color: rgb(240, 240, 240);
+    border-radius: .2rem;
+    width: 700px;
+    height: 500px;
+}
+.final-img-container{
+    display: flex;
+    align-items:  center;
+    border: 1px solid red;
+    width: 400px;
+    height: 400px;
+    margin-left: -20px;
+    border-radius: .2rem;
+}
+.open-close{
+
+    padding-top: 0;
+}

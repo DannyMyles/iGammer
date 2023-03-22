@@ -1,0 +1,91 @@
+.top-container{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 29em;
+  margin-bottom: -5em;
+  font-size: 14px;
+
+}
+.status{
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  border-radius: ;
+  padding: .3rem 1.5rem;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
+}
+.top-container .open{
+  color: aquamarine;
+}
+.top-container .close{
+  color: rgb(230, 41, 41);
+}
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+.main-left{
+    display: flex;
+    flex-direction: column; 
+      
+}
+.tiles-container {
+  background-color: rgb(237, 237, 237);
+  border-radius: 0.3rem;
+  width: 700px;
+  height: 500px;
+  padding: 4rem 10rem;
+}
+.select-size{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1rem;  
+}
+.select-size button{
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: rgb(238,112,112);
+    cursor: pointer;
+}
+.main-display {
+  margin-left: -20px;
+  padding: 4rem 10rem;
+}
+.final-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 0.8rem;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 1px 2.5px rgba(234, 233, 233, 0.9);
+}
+
+.pal-submit {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}
+.pal-submit button {
+  border: 1px solid rgb(147, 146, 146);
+  outline: none;
+  border-radius: 0.7rem;
+  padding: .4rem 4rem;
+  font-size: medium;
+  cursor: pointer;
+}
+.pal-submit:first-child{
+    background-color: rgb(41, 155, 236);
+}

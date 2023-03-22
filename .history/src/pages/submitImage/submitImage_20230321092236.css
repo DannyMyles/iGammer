@@ -1,0 +1,42 @@
+.upload-container {
+  margin: 2rem;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-container form {
+  padding: 4rem;
+  height: 100%;
+}
+.upload-container label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: left;
+  /* padding: 1rem; */
+}
+
+input[type="file"] {
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.image-preview {
+  margin-top: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+}
+.upload-btn {
+  padding: 0.5rem;
+  border: none;
+  col
+  border-radius: 2rem;
+  background-color: #ee7070;
+  cursor: pointer;
+}

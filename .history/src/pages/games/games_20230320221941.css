@@ -1,0 +1,15 @@
+.game-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 60vh;
+}
+.tiles-container{
+    border: 1px solid red;
+    background-color: rgb(192, 191, 191);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}

@@ -1,0 +1,32 @@
+.browse-container{
+    display: flex;
+    justify-content: space-around;
+    height: 80vh;
+    margin-bottom: .5rem;
+    gap: 2rem;
+    padding-top: .7rem;
+}
+.left-container{
+    background-color: rgb(112, 244, 112);
+    width: 400px;
+    height: 400px;
+    border-radius: 1rem;
+    display: flex;
+    jcc
+    align-items: center;
+}
+.center-container{
+    background-color: rgb(103, 103, 244);
+    width: 400px;
+    height: 400px;
+    border-radius: 1rem;
+}
+.right-container{
+    background-color: rgb(111, 255, 188);
+    width: 400px;
+    height: 400px;
+    border-radius: 1rem;
+}
+h2{
+    padding-left: 1rem;
+}
