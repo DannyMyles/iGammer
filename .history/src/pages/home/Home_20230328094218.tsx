@@ -40,7 +40,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="slider-container"><Slider /></div>
       <Slider />
       <div className="first-cont">
         <div className="home-image">
