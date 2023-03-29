@@ -26,7 +26,7 @@ const BrowseGames = () => {
             alt="backgrounImage"
           />
           <div className="image__overlay image__overlay--blur">
-            <div className="image__title">New game</div>
+            <div className="image__title">Un</div>
             <button className="image__description">Continue Playing</button>
           </div>
         </div>

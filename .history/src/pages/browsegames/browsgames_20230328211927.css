@@ -3,11 +3,11 @@
     justify-content: space-around;
     align-items: center;
     height: 110vh;
-    margin-bottom: 2rem;
+    margin-bottom: rem;
     gap: 1rem;
+    /* padding-top: .7rem; */
     flex-wrap: wrap;
 }
-
 h2{
     margin-left: 2rem;
 }

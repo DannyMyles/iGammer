@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
@@ -24,7 +25,7 @@ const Home = () => {
           <div className="home-content">
             <div className="home-content-inner">
               <h1>Let the Game Begin!</h1>
-              <span className="home-span">
+              <span home-span>
                 Welcome to our exciting online game! <br /> Thousands of dollars
                 worth of games to play.
                 <br /> Play now, Win and claim your prize. Play as <br /> many
