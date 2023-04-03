@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { gameapi } from '../services/gameApi';
+import { api } from '../api';
 
 const store = configureStore({
   reducer: {
@@ -7,7 +7,7 @@ const store = configureStore({
     // Add your other reducers here
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({serializableCheck: false}).concat(gameapi.middleware),
+    getDefaultMiddleware().concat(gameapi.middleware),
 });
 
 export default store;
