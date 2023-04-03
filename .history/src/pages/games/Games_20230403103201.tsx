@@ -15,16 +15,29 @@ const Games = () => {
         <div className="main-left">
           <div className="tiles-container">
             <div className="split-images">
+              <div className="row-one">1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
 
             </div>
           </div>
           <div className="select-size">
             <span>Select Tiles</span>
              <div>
-              <button>3*3</button>
+              <button>3*3</button>{" "}
             </div>
             <div>
-              <button>4*4</button>
+              <button>8*4</button>{" "}
+            </div>
+            <div>
+              <button>16*4</button>{" "}
+            </div> 
+            <div>
+              <button>32*4</button>
             </div>
           </div>
         </div>

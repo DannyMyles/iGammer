@@ -15,8 +15,7 @@ const Games = () => {
         <div className="main-left">
           <div className="tiles-container">
             <div className="split-images">
-
-            </div>
+              
           </div>
           <div className="select-size">
             <span>Select Tiles</span>
