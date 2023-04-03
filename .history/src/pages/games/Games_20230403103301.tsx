@@ -15,6 +15,7 @@ const Games = () => {
         <div className="main-left">
           <div className="tiles-container">
             <div className="split-images">
+              <div className="row-one">1</div>
 
             </div>
           </div>
