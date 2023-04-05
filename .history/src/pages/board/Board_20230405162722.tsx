@@ -47,8 +47,8 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
             left: `${tile.left}px`,
             position: "absolute",
             // objectFit: '10px',
-            // objectPosition: '10% 10%', 
-            backgroundSize: `${tilesPerRow * tileWidth}px`,   
+            // objectPosition: '10% 10%',
+            backgroundSize: `cover`,
             border: "0.5px solid lightgray",
             background: `rgba(255,255,255,0.5) url(${imageUrl}) ${backgroundPositionX}px ${backgroundPositionY}px`,
             // opacity: 0.5
