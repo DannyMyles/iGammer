@@ -1,0 +1,23 @@
+import React, { useEffect } from 'react'
+
+interface BoardProps{
+    tilePerRow:Number,
+    imageUrl:String
+}
+
+const Board = ({tilePerRow,  imageUrl}:BoardProps) => {
+
+    const [totalTiles, setTotalTiles] = useState();
+
+    useEffect(()=>{
+
+    });
+
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default Board
