@@ -1,0 +1,48 @@
+.profile {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+  background-color: #fff;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 16px;
+  cursor: pointer;
+  width: 70px;
+  height: 20px;
+  border: 1px solid red;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-option {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-option:hover {
+  background-color: #eee;
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  font-size: 12px;
+}

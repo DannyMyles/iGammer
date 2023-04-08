@@ -1,0 +1,122 @@
+.top-container{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 27em;
+  margin-bottom: -em;
+  font-size: 14px;
+
+}
+.status{
+  display: flex;
+  align-items: center;
+  border-left: 3px solid rgb(17,222,174);
+  border-right: 3px solid red;
+  border-radius: 1rem;
+  padding: .3rem 1.5rem;
+}
+.hr{
+  height: 30px;
+  width: 2px;
+  background-color: rgb(94, 94, 94);
+  margin-left: .3rem;
+  margin-right: 0.3rem;
+}
+.top-container .open{
+  color: rgb(17,222,174);
+}
+.top-container .close{
+  color: rgb(230, 41, 41);
+}
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+.main-left{
+    display: flex;
+    flex-direction: column; 
+      
+}
+.tiles-container {
+  background-color: rgb(237, 237, 237);
+  border-radius: 0.3rem;
+  width: 700px;
+  height: 500px;
+  padding: 4rem 10rem;
+}
+.select-size{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1rem;  
+}
+.select-size button{
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: rgb(238,112,112);
+    cursor: pointer;
+}
+.select-size button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.select-size button::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.select-size button:hover::after {
+  opacity: 1;
+}
+.main-display {
+  margin-left: -20px;
+  padding: 4rem 10rem;
+}
+.final-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 0.8rem;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 1px 2.5px rgba(234, 233, 233, 0.9);
+}
+
+.pal-submit {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}
+.pal-submit button {
+  border: 1px solid rgb(147, 146, 146);
+  outline: none;
+  border-radius: 0.7rem;
+  padding: .4rem 4rem;
+  font-size: medium;
+  cursor: pointer;
+}
+.pal button{
+    background-color: rgb(5, 125, 211);
+    color: #ffffff;
+}
+
+.profile-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+  margin-bottom: 2rem;
+}

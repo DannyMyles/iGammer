@@ -1,0 +1,45 @@
+import { Route, Routes } from "react-router-dom";
+import Games from "./pages/games/Games";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import NotFound from "./pages/pagenotfound/NotFound";
+import PlayGame from "./pages/browsegames/BrowsGames";
+import Register from "./pages/register/Register";
+import SubmitImage from "./pages/submitImage/SubmitImage";
+import BrowseGames from "./pages/browsegames/BrowsGames";
+// import Profile from "./components/profile/Profile";
+
+function App() {
+
+  const handleSubmit = (email: string, password: string) => {
+    // Handle login logic here
+    console.log("Email:", email);
+    console.log("Password:", password);
+  };
+
+  const handleImageSubmit = (image: File) => {
+    console.log("Submitted image:", image);
+    // Do something with the image, like upload it to a server
+  };
+
+  const handleLogout = () => {
+    // Your logout logic here
+  }
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/games" element={<Games />} />
+      <Route path="/play" element={<PlayGame />} />
+      <Route path="/submitImage" element={<SubmitImage onSubmit={handleImageSubmit} />} />
+      <Route path="/browseGames" element={<BrowseGames />} />
+      <Route path="/login" element={<Login onSubmit={handleSubmit} />} />
+     <Route
+        path="/registration"
+        element={<Register />}
+      />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
+export default App;
