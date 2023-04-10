@@ -11,12 +11,20 @@ export interface BoardProps {
 }
 
 export interface TitleState {
+  // width: string;
+  // height: string;
   tileIndex:number,
   top: string;
   left: string;
   url: string,
   x: number,
   y: number
+  // position?: any;
+  // border?: string;
+  // backgroundPosition?: string;
+  // backgroundSize?: string;
+  // backgroundImage?: string;
+  // opecity?: number;
 }
 
 export interface TilePosition {

@@ -3,6 +3,7 @@ import Games from "./pages/games/Games";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import NotFound from "./pages/pagenotfound/NotFound";
+import PlayGame from "./pages/browsegames/BrowsGames";
 import Register from "./pages/register/Register";
 import SubmitImage from "./pages/submitImage/SubmitImage";
 import BrowseGames from "./pages/browsegames/BrowsGames";
