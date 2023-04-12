@@ -1,4 +1,4 @@
-import { TilePosition, TitleState } from "../../models/games.models";
+import { TilePosition, TitleState } from "../models/games.models";
 
 export function getTileImageUrl(
   width: number,

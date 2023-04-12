@@ -1,5 +1,5 @@
-import Footer from "../../../components/footer/Footer";
-import Navbar from "../../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
 import "./browsgames.css";
 import { useNavigate } from "react-router-dom";
 
@@ -88,4 +88,3 @@ const BrowseGames = () => {
 };
 
 export default BrowseGames;
-

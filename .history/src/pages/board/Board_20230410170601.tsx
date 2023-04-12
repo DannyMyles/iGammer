@@ -1,8 +1,7 @@
 
-import { shuffle } from "lodash";
-import React, { useEffect, useState } from "react";
-import { BoardProps, TilePosition, TitleState } from "../../models/games.models";
-import { gameSolution, getTileImageUrl, shuffleBoard } from "../../app/services/game-logic";
+import { useEffect, useState } from "react";
+import { BoardProps, TilePosition, TitleState} from "../../models/games.models";
+import { gameSolution, getTileImageUrl, shuffleBoard } from "../../services/game-logic";
 
 const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
   
