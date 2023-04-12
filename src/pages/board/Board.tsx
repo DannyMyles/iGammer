@@ -2,7 +2,7 @@
 import { shuffle } from "lodash";
 import React, { useEffect, useState } from "react";
 import { BoardProps, TilePosition, TitleState } from "../../models/games.models";
-import { gameSolution, getTileImageUrl, initBoard, shuffleBoard } from "../../services/game-logic";
+import { gameSolution, getTileImageUrl, initBoard, shuffleBoard } from "../../app/services/game-logic";
 
 const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
   
@@ -22,7 +22,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
     setBoardWidth(bw);
 
 
-    setTimeout(()=>{
+    const subscribe = setTimeout(()=>{
       const solution = gameSolution(tilesPerRow, width, tw);
       solution.pop();
       const shuffledTiles = shuffleBoard( solution );
@@ -33,6 +33,10 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
       setTiles(shuffledTiles);
     }, 200);
     
+
+    return ()=>{
+      clearTimeout(subscribe)
+    }
   }, []);
 
   return (

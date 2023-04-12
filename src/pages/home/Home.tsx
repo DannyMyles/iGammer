@@ -8,10 +8,10 @@ const Home = () => {
    // Navigation to Campaigns
    const navigate = useNavigate();
    const navigateToSubmitImage = () => {
-     navigate("/SubmitImage");
+     navigate("/games/submit-image");
    };
    const navigateToBrowse = () => {
-    navigate("/BrowseGames");
+    navigate("/games/browse-games");
   };
   return (
     <>
