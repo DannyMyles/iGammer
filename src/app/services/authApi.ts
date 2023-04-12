@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { LoginRequest, LoginResponse, User } from "../../@types";
+import { LoginRequest, LoginResponse, AuthUser, SignupResponse, SignupRequest } from "../../@types";
 import { RootState } from '../rootReducer';
-// import { RootState } from "../store";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const authApi = createApi({
   reducerPath:'authApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:8080',
+    baseUrl: BASE_URL,
     prepareHeaders: (headers, { getState }) => {
       // By default, if we have a token in the store, let's use that for authenticated requests
       const token = (getState() as RootState).auth.accessToken
@@ -24,7 +24,7 @@ export const authApi = createApi({
         body: credentials,
       }),
     }),
-    signup: builder.mutation<LoginResponse, User>({
+    signup: builder.mutation<SignupResponse, SignupRequest>({
       query: (body) => ({
         url: 'auth/signup',
         method: 'POST',
