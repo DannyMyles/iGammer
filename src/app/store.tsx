@@ -13,7 +13,7 @@ import {
 } from 'redux-persist'
 
 import storage from 'redux-persist/lib/storage';
-import { authApi } from './services';
+import { authApi, gameApi } from './services';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { loadState } from './localStorage';
 import rootReducer, { RootState } from './rootReducer';
@@ -37,7 +37,7 @@ const store = configureStore({
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
-  }).concat(authApi.middleware),
+  }).concat(authApi.middleware, gameApi.middleware),
 
 });
 

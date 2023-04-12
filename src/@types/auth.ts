@@ -8,10 +8,16 @@ export interface User {
   password: string;
 }
 
-export interface AuthUser extends User {
+export interface AuthUser {
   id: number;
   accessToken: string;
   role: string;
+  fullname: string;
+  lastname: string;
+  email: string;
+  birthdate: string;
+  gender: string;
+  username: string;
 }
 
 export interface AuthState {
