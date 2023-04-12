@@ -76,7 +76,7 @@ const Register = () => {
             <input
               type="date"
               value={formData.birthdate}
-              onChange={handleChange}
+              onChange={(event) => setBirthDate(event.target.value)}
               required
             />
           </label>
@@ -85,7 +85,7 @@ const Register = () => {
             <input
               type="email"
               value={formData.email}
-              onChange={handleChange}
+              onChange={(event) => setEmail(event.target.value)}
               required
             />
           </label>
@@ -94,7 +94,7 @@ const Register = () => {
             <input
               type="password"
               value={formData.password}
-              onChange={handleChange}
+              onChange={(event) => setPassword(event.target.value)}
               required
             />
           </label>

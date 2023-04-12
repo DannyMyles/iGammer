@@ -94,7 +94,7 @@ const Register = () => {
             <input
               type="password"
               value={formData.password}
-              onChange={handleChange}
+              onChange={(event) => setPassword(event.target.value)}
               required
             />
           </label>
