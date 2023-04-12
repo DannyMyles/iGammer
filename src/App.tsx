@@ -21,20 +21,6 @@ function App() {
     console.log(firstName, lastName, email, password);
   };
 
-  const handleSubmit = (email: string, password: string) => {
-    // Handle login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
-
-  const handleImageSubmit = (image: File) => {
-    console.log("Submitted image:", image);
-    // Do something with the image, like upload it to a server
-  };
-
-  const handleLogout = () => {
-    // Your logout logic here
-  }
   return (
     <Routes>
       {/* Public routes */}
@@ -52,7 +38,7 @@ function App() {
         {/* <Route path="play" element={<PlayGame />} /> */}
         <Route
           path="submit-image"
-          element={<SubmitImage onSubmit={handleImageSubmit} />}
+          element={<SubmitImage />}
         />
         <Route path="browse-games" element={<BrowseGames />} />
       </Route>

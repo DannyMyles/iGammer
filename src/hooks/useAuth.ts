@@ -5,6 +5,6 @@ import { useMemo } from "react";
 export const useAuth = () => {
   const user = useSelector(selectCurrentUser);
   const token = useSelector(selectCurrentToken);
-  console.log("Token", token)
+  // console.log("Token", token)
   return useMemo(() => ({ user }), [user]);
 };

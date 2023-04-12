@@ -38,8 +38,6 @@ const Register = ({ onSubmit }: RegistrationProps) => {
             type="text"
             value={firstName}
             onChange={(event) => setFirstName(event.target.value)}
-            required
-            autoFocus
           />
         </label>
         <label>
@@ -48,7 +46,6 @@ const Register = ({ onSubmit }: RegistrationProps) => {
             type="text"
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
-            required
           />
         </label>
         <label>
@@ -57,7 +54,6 @@ const Register = ({ onSubmit }: RegistrationProps) => {
             type="date"
             value={birthDate}
             onChange={(event) => setBirthDate(event.target.value)}
-            required
           />
         </label>
         <label>
@@ -66,7 +62,6 @@ const Register = ({ onSubmit }: RegistrationProps) => {
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            required
           />
         </label>
         <label>
@@ -75,7 +70,6 @@ const Register = ({ onSubmit }: RegistrationProps) => {
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            required
           />
         </label>
         <button type="submit">Register</button>

@@ -4,7 +4,7 @@ import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { LoginRequest, User } from "../../@types";
+import { LoginRequest } from "../../@types";
 import { useLoginMutation } from "../../app/services";
 import { setCredentials } from "../../features/auth/authSlice";
 
