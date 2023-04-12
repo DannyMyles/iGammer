@@ -56,8 +56,8 @@ const Register = () => {
             First Name:
             <input
               type="text"
-              value={formData.fullname}
-              onChange={handleChange}
+              value={formData.firstName}
+              onChange={(event) => setFirstName(event.target.value)}
               required
               autoFocus
             />
@@ -66,8 +66,8 @@ const Register = () => {
             Last Name:
             <input
               type="text"
-              value={formData.lastname}
-              onChange={handleChange}
+              value={lastName}
+              onChange={(event) => setLastName(event.target.value)}
               required
             />
           </label>
@@ -75,8 +75,8 @@ const Register = () => {
             Birth Date:
             <input
               type="date"
-              value={formData.birthdate}
-              onChange={handleChange}
+              value={birthDate}
+              onChange={(event) => setBirthDate(event.target.value)}
               required
             />
           </label>
@@ -84,8 +84,8 @@ const Register = () => {
             Email:
             <input
               type="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
               required
             />
           </label>
@@ -93,8 +93,8 @@ const Register = () => {
             Password:
             <input
               type="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
               required
             />
           </label>
