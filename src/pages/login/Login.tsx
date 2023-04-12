@@ -2,19 +2,44 @@ import "./login.css";
 import { useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { LoginRequest, User } from "../../@types";
+import { useLoginMutation } from "../../app/services";
+import { setCredentials } from "../../features/auth/authSlice";
 
-type LoginProps = {
-  onSubmit: (email: string, password: string) => any;
-}
-const Login = ({ onSubmit }: LoginProps) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+const Login = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const [userData, setUserData] = useState<LoginRequest>({
+    username: '',
+    password:''
+  })
+
+  const [login, { isLoading }] = useLoginMutation()
 
   //handle submit form sunction
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit(email, password);
+    try {
+      const user = await login(userData).unwrap()
+      // console.log("User", user.data)
+      const { data, status } = user
+      if(status === 200){
+        dispatch(setCredentials({data}))
+        navigate('/games/browse-games')
+      }
+    } catch (error) {
+      console.log("Error occured", error)
+    }
+
   };
+
+  const handleChange = ({target: { name, value }}: React.ChangeEvent<HTMLInputElement>) =>{
+    setUserData(prev => ({ ...prev, [name]: value }))
+  } 
 
   return (
     <>
@@ -22,23 +47,25 @@ const Login = ({ onSubmit }: LoginProps) => {
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
       <h2>Login</h2>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="username">Username</label>
         <input
-          className="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          className="username"
+          type="text"
+          name="username"
+          value={userData.username}
+          onChange={handleChange}
           required
         />
         <label htmlFor="password">Password</label>
         <input
           id="password"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          value={userData.password}
+          onChange={handleChange}
           required
         />
-        <button type="submit">Log In</button>
+        <button disabled={isLoading} type="submit">Log In</button>
       </form>
     </div>
     <Footer />
