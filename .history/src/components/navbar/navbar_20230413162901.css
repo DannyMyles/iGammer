@@ -1,0 +1,144 @@
+/* Navbar.css */
+
+.nav {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 10px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.user-dropdown {
+  position: relative;
+}
+
+.user_initials {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user_initials span {
+  background-color: #fff;
+  border-radius: 50%;
+  color: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+  min-width: 150px;
+}
+
+.dropdown-item {
+  background-color: transparent;
+  border: none;
+  color: #1b1b1b;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .user-dropdown {
+    margin-left: auto;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .links {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .links-toggle {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .toggle:hover {
+    border: none;
+  }
+
+  .nav-link {
+    display: block;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .dropdown-menu {
+    top: 60px;
+    right: 10px;
+    width: 120px;
+  }
+
+  .dropdown-item {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
