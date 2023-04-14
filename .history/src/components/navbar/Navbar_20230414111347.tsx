@@ -44,7 +44,7 @@ const Navbar = () => {
                   <span> {initials} </span> 
                   {isOpen && (
                     <div className="dropdown-menu">
-                      <span> {initials} </span>
+                      <div><span> {initials} </span></div>
                       <div><button className="dropdown-item">Settings</button> </div>
                       <button
                         className="dropdown-item"

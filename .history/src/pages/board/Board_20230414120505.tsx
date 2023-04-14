@@ -113,7 +113,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
 
       ))} */}
       {tiles.map((tile, i)=><img 
-        key={i+1} 
+        key={i+2} 
         style={{...tile, position:'absolute'}} 
         alt="test" src={tile.url} 
         onClick={()=>move(tile)}

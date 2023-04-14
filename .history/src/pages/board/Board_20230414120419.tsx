@@ -96,7 +96,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
 
   return (
     <div
-      style={{ 
+      style={{  
 
         position: "relative",
         // background: `rgb(236, 236, 236) url(${imageUrl})`,
