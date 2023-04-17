@@ -7,7 +7,7 @@ const BrowseGames = () => {
   // Navigation to Campaigns
   const navigate = useNavigate();
   const navigateToPlay = () => {
-    navigate("/Games");
+    navigate("/playgame");
   };
   return (
     <>
@@ -28,7 +28,7 @@ const BrowseGames = () => {
         <div className="image">
           <img
             className="image__img"
-            src="/assets/images/m4.jpeg"
+            src="/assets/images/m2.jpg"
             alt="backgrounImage"
           />
           <div className="image__overlay image__overlay--blur">
@@ -39,7 +39,7 @@ const BrowseGames = () => {
         <div className="image">
           <img
             className="image__img"
-            src="/assets/images/m5.jpg"
+            src="/assets/images/m2.jpg"
             alt="backgrounImage"
           />
           <div className="image__overlay image__overlay--blur">
@@ -50,7 +50,7 @@ const BrowseGames = () => {
         <div className="image">
           <img
             className="image__img"
-            src="/assets/images/m6.jpeg"
+            src="/assets/images/m1.jpg"
             alt="backgrounImage"
           />
           <div className="image__overlay image__overlay--blur">
@@ -61,7 +61,7 @@ const BrowseGames = () => {
         <div className="image">
           <img
             className="image__img"
-            src="/assets/images/m7.jpeg"
+            src="/assets/images/m1.jpg"
             alt="backgrounImage"
           />
           <div className="image__overlay image__overlay--blur">

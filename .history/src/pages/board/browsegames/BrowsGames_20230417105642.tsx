@@ -39,7 +39,7 @@ const BrowseGames = () => {
         <div className="image">
           <img
             className="image__img"
-            src="/assets/images/m5.jpg"
+            src="/assets/images/m5.jpeg"
             alt="backgrounImage"
           />
           <div className="image__overlay image__overlay--blur">

@@ -66,7 +66,6 @@ const Register = () => {
               onChange={handleChange}
               required
               autoFocus
-              autoComplete="off"
             />
           </label>
           <label>
@@ -77,7 +76,6 @@ const Register = () => {
               value={formData.lastname}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -88,7 +86,6 @@ const Register = () => {
               value={formData.birthdate}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -99,7 +96,6 @@ const Register = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -110,7 +106,6 @@ const Register = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -121,7 +116,6 @@ const Register = () => {
               value={formData.username}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -130,7 +124,6 @@ const Register = () => {
               value={formData.gender}
               onChange={handleChange}
               required
-              autoComplete="off"
             >
               <option disabled value="">
                 Select Gender:

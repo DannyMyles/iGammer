@@ -43,7 +43,7 @@ const Login = () => {
   useEffect(() => {
     if (window.location.pathname === "/games/browse-games") {
       toast.success("Login successful!", {
-        position: toast.POSITION.TOP_CENTER,
+        position: toast.POSITION.CENTER,
         autoClose: 2000,
       });
     }

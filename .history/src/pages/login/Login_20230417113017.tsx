@@ -1,5 +1,5 @@
 import "./login.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -29,6 +29,11 @@ const Login = () => {
       const { data, status } = user;
       if (status === 200) {
         dispatch(setCredentials({ data }));
+        // toast notification
+        toast.success("Login successful!", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
         navigate("/games/browse-games");
       }
     } catch (error) {
@@ -39,15 +44,6 @@ const Login = () => {
       });
     }
   };
-
-  useEffect(() => {
-    if (window.location.pathname === "/games/browse-games") {
-      toast.success("Login successful!", {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: 2000,
-      });
-    }
-  }, []);
 
   const handleChange = ({
     target: { name, value },

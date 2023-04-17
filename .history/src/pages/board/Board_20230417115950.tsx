@@ -105,7 +105,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
             const randomizedTiles = randomizeTiles(maTiles);
             maTiles = randomizedTiles;
             i++; 
-            if(i > 10){
+            if(i > 50){
               clearInterval(interval);
               setTiles(maTiles)
             }
@@ -116,7 +116,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
       
     // }, 200); 
 
-  }, []);
+  }, [boardWidth, imageUrl, randomizeTiles, tileImages, tileWidth, tilesPerRow, width]);
 
   function move(tile:TileState){
     // debugger;
@@ -155,7 +155,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
         backgroundSize: "cover",
         // width: `${boardWidth}px`,
         // height: `${boardWidth}px`,
-        // background: 'yellow' 
+        background: 'yellow' 
       }}
     >
       {/* {tiles.map((tile, i) => (
