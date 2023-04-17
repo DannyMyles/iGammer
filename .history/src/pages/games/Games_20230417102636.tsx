@@ -5,9 +5,9 @@ import Navbar from "../../components/navbar/Navbar";
 import "./games.css";
 
 const Games = () => {
-  const [tilesPerRow, setTilesPerRow] = useState(3);
+  const [tilesPerRow, setTilesPerRow] = useState<any>(3);
 
-  const handleTileSelection = (tilesPerRow:any) => {
+  const handleTileSelection = (tilesPerRow:number) => {
     setTilesPerRow(tilesPerRow);
   };
 

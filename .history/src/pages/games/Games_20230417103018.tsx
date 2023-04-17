@@ -7,7 +7,7 @@ import "./games.css";
 const Games = () => {
   const [tilesPerRow, setTilesPerRow] = useState(3);
 
-  const handleTileSelection = (tilesPerRow:any) => {
+  const handleTileSelection = (tilesPerRow:Number) => {
     setTilesPerRow(tilesPerRow);
   };
 

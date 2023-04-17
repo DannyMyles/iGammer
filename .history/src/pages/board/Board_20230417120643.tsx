@@ -155,7 +155,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
         backgroundSize: "cover",
         // width: `${boardWidth}px`,
         // height: `${boardWidth}px`,
-        // background: 'yellow' 
+        background: 'yellow' 
       }}
     >
       {/* {tiles.map((tile, i) => (

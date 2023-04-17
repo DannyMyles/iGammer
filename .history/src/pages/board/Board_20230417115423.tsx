@@ -105,7 +105,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
             const randomizedTiles = randomizeTiles(maTiles);
             maTiles = randomizedTiles;
             i++; 
-            if(i > 10){
+            if(i > 50){
               clearInterval(interval);
               setTiles(maTiles)
             }
@@ -137,7 +137,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
           x: newPosition!.x,
           y: newPosition!.y, 
           top:`${newPosition!.y}px`, 
-          left:`${newPosition!.x}px`
+         
         });
         return ts;
       });
@@ -155,7 +155,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
         backgroundSize: "cover",
         // width: `${boardWidth}px`,
         // height: `${boardWidth}px`,
-        // background: 'yellow' 
+        background: 'yellow' 
       }}
     >
       {/* {tiles.map((tile, i) => (
@@ -166,7 +166,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
       ))} */}
       {tiles.map((tile, i)=><img 
         key={i+1} 
-        style={{...tile, position:'absolute'}} 
+        style={{...tile, position:'absolute', border:'1px solid yellow', color:'red'}} 
         alt={`t${tile.index}`} src={tile.url}
         width={tileWidth}
         height={tileWidth}

@@ -105,7 +105,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
             const randomizedTiles = randomizeTiles(maTiles);
             maTiles = randomizedTiles;
             i++; 
-            if(i > 10){
+            if(i > 50){
               clearInterval(interval);
               setTiles(maTiles)
             }
@@ -153,9 +153,9 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
         position: "relative",
         // background: `rgb(236, 236, 236) url(${imageUrl})`,
         backgroundSize: "cover",
-        // width: `${boardWidth}px`,
-        // height: `${boardWidth}px`,
-        // background: 'yellow' 
+        width: `${boardWidth}px`,
+        height: `${boardWidth}px`,
+        background: 'yellow' 
       }}
     >
       {/* {tiles.map((tile, i) => (

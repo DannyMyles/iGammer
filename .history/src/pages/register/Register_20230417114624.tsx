@@ -30,17 +30,21 @@ const Register = () => {
     e.preventDefault();
     try {
       const user = await register(formData).unwrap();
+      console.log("User", user);
       const { data, status } = user;
       if (status === 201) {
         dispatch(setCredentials({ data }));
-        // pass the notification message as a query parameter
-        navigate("/", { state: { notification: "Registration successful!" } });
+        // toast notification
+        toast.success("Login successful!", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+        navigate("/");
       }
     } catch (error) {
       console.log("Error occured", error);
     }
   };
-  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -66,7 +70,6 @@ const Register = () => {
               onChange={handleChange}
               required
               autoFocus
-              autoComplete="off"
             />
           </label>
           <label>
@@ -77,7 +80,6 @@ const Register = () => {
               value={formData.lastname}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -88,7 +90,6 @@ const Register = () => {
               value={formData.birthdate}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -99,7 +100,6 @@ const Register = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -110,7 +110,6 @@ const Register = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -121,7 +120,6 @@ const Register = () => {
               value={formData.username}
               onChange={handleChange}
               required
-              autoComplete="off"
             />
           </label>
           <label>
@@ -130,7 +128,6 @@ const Register = () => {
               value={formData.gender}
               onChange={handleChange}
               required
-              autoComplete="off"
             >
               <option disabled value="">
                 Select Gender:
