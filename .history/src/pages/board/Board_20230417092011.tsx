@@ -91,7 +91,7 @@ const Board = ({ tilesPerRow, width, imageUrl }: BoardProps) => {
             x: tilePosition.x,
             y: tilePosition.y, 
             url: tileImages[i],
-            index: i,
+            
             // background: `url(${tileImages[i]})`,
             // width: tileWidth,
             // height: tileWidth
