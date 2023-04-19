@@ -1,0 +1,40 @@
+.edit_profile {
+  color:#000000;
+}
+/* img{
+  width: 8.5%;
+  margin-left: 20rem;
+  margin-top: -40px;
+} */
+
+.edit_profile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit_profile label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.edit_profile input[type="text"],
+.edit_profile input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.edit_profile button {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: rgb(238,112,112);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
