@@ -15,10 +15,9 @@
     background-color: #f9f9f9;
     border-radius:.6rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
   }
   .registration_form h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
   }
   
   .registration_form label {

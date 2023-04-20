@@ -6,19 +6,24 @@
     background: url("../../../public/assets/images/back.jpg")  center no-repeat;
     background-size: cover;
   }
+.registration_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+  }
   .register_container form {
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 450px;
+    width: 400px;
     padding: 3rem;
-    background-color: #f9f9f9;
+     background-color: #f9f9f9;
     border-radius:.6rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
   }
   .registration_form h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
   }
   
   .registration_form label {

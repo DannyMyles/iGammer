@@ -5,6 +5,7 @@
     height: 100vh;
     background: url("../../../public/assets/images/back.jpg")  center no-repeat;
     background-size: cover;
+    
   }
   .register_container form {
     display: flex;

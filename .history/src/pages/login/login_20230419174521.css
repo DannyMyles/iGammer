@@ -11,16 +11,17 @@
     margin-bottom: 20px;
     margin-top: 0;
   }
-  .login_container form {
+  form {
     display: flex;
     flex-direction: column;
     text-align: left;
     width: 400px;
     padding: 3rem;
-     background-color: #f9f9f9;
-    border-radius:.6rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
+    /*background-color: #f9f9f9;
+    */border-radius:.6rem;
+    /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+  
   label {
     margin-bottom: .5rem;
     font-weight: bold;
