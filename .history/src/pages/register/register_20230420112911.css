@@ -1,0 +1,65 @@
+.register_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../../../public/assets/images/back.jpg")  center no-repeat;
+    background-size: cover;
+  }
+  .register_container form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 450px;
+    padding: .5rem 1rem 1.5rem 1rem;
+    background-color: #f9f9f9;
+    border-radius:.6rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  .registration_form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .registration_form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+  }
+  .registration_form label > select {
+      border: 1px solid rgb(205, 205, 205);
+      padding: .8rem;
+      border-radius: 10px;
+      font-size: 1rem;
+}
+  .registration_form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+  
+  .registration_form button {
+    width: 100%;
+    padding: .8rem;
+    background-color: rgb(238,112,112);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+  
+  .registration_form button:hover {
+    background-color: rgb(246, 135, 135);
+  }
+
+  @media (min-width: 380px) and (max-width: 980px) {
+    .register_container form {
+      /* width: 400px; */
+      padding: .4rem;
+      margin: 0;
+    }
+  }
