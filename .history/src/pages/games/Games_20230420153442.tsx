@@ -18,9 +18,7 @@ const Games = () => {
   const [tileWidth, setTileWidth] = useState<number>( 640 / 3 )
 
   const handleTileSelection = (tpr: any) => {
-    setTileWidth( boardWidth / tpr );
     setTilesPerRow(tpr);
-    init();
   };
 
   function move(tile: TileState) {
@@ -86,7 +84,8 @@ const Games = () => {
     });
   }
 
-  function init(){
+  useEffect(() => {
+    
     const solution: TilePosition[] = gameSolution(tilesPerRow, boardWidth);
     Promise.all(
       solution.map((tp) =>
@@ -96,7 +95,7 @@ const Games = () => {
           tp.x,
           tp.y,
           "assets/images/msq.jpg",
-          boardWidth
+          640
         )
       )
     )
@@ -127,12 +126,6 @@ const Games = () => {
         return shuffle(tls);
       })
       .then((tls) => setTiles(tls));
-  }
-
-  useEffect(() => {
-    
-    init();
-    
   }, []);
 
   return (

@@ -4,11 +4,14 @@ import { BoardProps, TilePosition, TileState } from "../../models/games.models";
 import { gameSolution, getTileImageUrl } from "../../utils/game-logic";
 
 interface BoardState{
-  tiles:TileState[],
-  move: Function
+  tiles:TileState[]
 }
 
-const Board = ({ tiles, move }: BoardState) => {
+const Board = ({ tiles }: BoardState) => {
+  
+  function move(tile:TileState){
+    console.log(tile);
+  }
 
   return (
     <div

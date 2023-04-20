@@ -73,6 +73,15 @@ const Games = () => {
   function shuffle(tiles: TileState[]): Promise<TileState[]> {
     return new Promise((resolve) => {
       let c = 0;
+      // let mt = missingTile;
+      // while(c < 10){
+      //   const randomized = randomizeTiles(tiles, tilesPerRow, tileWidth, mt!);
+      //   mt = randomized.newMissing;
+      //   tiles = randomized.tiles;
+      //   c++
+      // }
+      // // setMissingTile(mt);
+      // resolve(tiles);
       const interval = setInterval(() => {
         tiles = randomizeTiles(tiles, tilesPerRow, tileWidth);
         console.table(c);
@@ -101,32 +110,30 @@ const Games = () => {
       )
     )
       .then((tls) =>
-        randomizeTiles(
-          tls.map((url: string, i: number) => {
-            const tilePosition = solution[i];
-            const ts: TileState = {
-              top: `${tilePosition.y}px`,
-              left: `${tilePosition.x}px`,
-              tileIndex: tilePosition.tileIndex,
-              x: tilePosition.x,
-              y: tilePosition.y,
-              url: url,
-              index: i,
-              width: tileWidth,
-              height: tileWidth,
-            };
-            return ts;
-          }),
-          3,
-          tileWidth
-        )
+      tls.map((url: string, i: number) => {
+        const tilePosition = solution[i];
+        const ts: TileState = {
+          top: `${tilePosition.y}px`,
+          left: `${tilePosition.x}px`,
+          tileIndex: tilePosition.tileIndex,
+          x: tilePosition.x,
+          y: tilePosition.y,
+          url: url,
+          index: i,
+          width: tileWidth,
+          height: tileWidth,
+        };
+        return ts;
+      })
       )
       .then((tls) => {
-        // const missingTile:TileState =
-        setMissingTile(tls.pop());
+        setMissingTile(tls.pop()); //[tls.length-1]
         return shuffle(tls);
       })
-      .then((tls) => setTiles(tls));
+      .then((tls) => {
+        // tls.splice( tls.findIndex(t=>t.tileIndex === missingTile?.tileIndex), 1 );
+        setTiles(tls) 
+      });
   }
 
   useEffect(() => {

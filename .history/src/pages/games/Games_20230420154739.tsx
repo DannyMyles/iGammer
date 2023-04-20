@@ -74,7 +74,7 @@ const Games = () => {
     return new Promise((resolve) => {
       let c = 0;
       const interval = setInterval(() => {
-        tiles = randomizeTiles(tiles, tilesPerRow, tileWidth);
+        tiles = randomizeTiles(tiles, tilesPerRow, tileWidth, missingTile!);
         console.table(c);
         c++;
 
@@ -101,25 +101,21 @@ const Games = () => {
       )
     )
       .then((tls) =>
-        randomizeTiles(
-          tls.map((url: string, i: number) => {
-            const tilePosition = solution[i];
-            const ts: TileState = {
-              top: `${tilePosition.y}px`,
-              left: `${tilePosition.x}px`,
-              tileIndex: tilePosition.tileIndex,
-              x: tilePosition.x,
-              y: tilePosition.y,
-              url: url,
-              index: i,
-              width: tileWidth,
-              height: tileWidth,
-            };
-            return ts;
-          }),
-          3,
-          tileWidth
-        )
+      tls.map((url: string, i: number) => {
+        const tilePosition = solution[i];
+        const ts: TileState = {
+          top: `${tilePosition.y}px`,
+          left: `${tilePosition.x}px`,
+          tileIndex: tilePosition.tileIndex,
+          x: tilePosition.x,
+          y: tilePosition.y,
+          url: url,
+          index: i,
+          width: tileWidth,
+          height: tileWidth,
+        };
+        return ts;
+      })
       )
       .then((tls) => {
         // const missingTile:TileState =

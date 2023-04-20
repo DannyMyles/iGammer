@@ -18,8 +18,8 @@ const Games = () => {
   const [tileWidth, setTileWidth] = useState<number>( 640 / 3 )
 
   const handleTileSelection = (tpr: any) => {
-    setTileWidth( boardWidth / tpr );
     setTilesPerRow(tpr);
+    setTileWidth( boardWidth / tpr )
     init();
   };
 

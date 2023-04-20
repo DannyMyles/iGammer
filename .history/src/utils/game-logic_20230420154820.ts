@@ -60,12 +60,12 @@ export function gameSolution(
   });
 }
 
-export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number){ 
+export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number, missingTile:TilePosition){ 
 
     // const movableTileIndex = getMovableTiles();
     // console.log(movableTileIndex);
   
-    const tr1 = Math.floor(Math.random() * mts.length);
+    const tr1 = mts.findIndex(t=>t.tileIndex === missingTile.tileIndex);
       const tr2 = Math.floor(Math.random() * mts.length);
   
       // console.log(tr1, tr2);

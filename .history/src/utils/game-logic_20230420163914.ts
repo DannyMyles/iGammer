@@ -60,39 +60,78 @@ export function gameSolution(
   });
 }
 
-export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number){ 
+export function getMovableTiles(tiles:TileState[], missingTile:TilePosition, tileWidth:number):number[]{
+  const movableTileIndex = [];
+    for (let i = 0; i < tiles.length; i++) {
+      const c = tiles[i];
+      if (c.x === missingTile!.x && c.y + tileWidth === missingTile!.y) {
+        movableTileIndex.push(c.tileIndex);
+      }
 
-    // const movableTileIndex = getMovableTiles();
-    // console.log(movableTileIndex);
+      if (c.x === missingTile!.x && c.y - tileWidth === missingTile!.y) {
+        movableTileIndex.push(c.tileIndex);
+      }
+
+      if (c.y === missingTile!.y && c.x + tileWidth === missingTile!.x) {
+        movableTileIndex.push(c.tileIndex);
+      }
+
+      if (c.y === missingTile!.y && c.x - tileWidth === missingTile!.x) {
+        movableTileIndex.push(c.tileIndex);
+      }
+    }
+
+    return movableTileIndex;
+}
+
+export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number, missingTile:TilePosition):{
+  newMissing:TileState,
+  tiles:TileState[]
+}
+{ 
+
   
-    const tr1 = Math.floor(Math.random() * mts.length);
-      const tr2 = Math.floor(Math.random() * mts.length);
+  // console.log(missingTile);
+  // console.table(mts);
+
+
+    const movableTileIndex:number[] = getMovableTiles(mts, missingTile, tileWidth);
+    console.log(movableTileIndex);
   
-      // console.log(tr1, tr2);
+    const tr1 = mts.findIndex(t=>t.tileIndex === missingTile.tileIndex); // Math.floor(Math.random() * mts.length);
+      const tr2 = mts.findIndex(t=>t.tileIndex === movableTileIndex[0]); // Math.floor(Math.random() * mts.length);
+  
+      console.log(tr1, tr2);
   
       const holdingTile = {...mts[tr1]}
       
-      mts[tr1] = {...mts[tr2]};
-      mts[tr2] = {...holdingTile}
+      mts[tr1].top = mts[tr2].top;
+      mts[tr1].left = mts[tr2].left;
+
+      mts[tr2].top = holdingTile.top;
+      mts[tr2].left = holdingTile.left;
 
       let top: number = 0;
       let left: number = 0;
 
-      return mts.map((n, i) => {
-        left += Number(tileWidth);
-        if (i % tilesPerRow === 0) {
-          if (i >= tilesPerRow) {
-            top += Number(tileWidth);
+      return {
+        newMissing:holdingTile,
+        tiles: mts.map((n, i) => {
+          left += Number(tileWidth);
+          if (i % tilesPerRow === 0) {
+            if (i >= tilesPerRow) {
+              top += Number(tileWidth);
+            }
+      
+            left = 0;
           }
-    
-          left = 0;
-        }
-        n.left = `${left}px`;
-        n.top = `${top}px`;
-        n.x = left;
-        n.y = top
-        return n;
-      });
+          n.left = `${left}px`;
+          n.top = `${top}px`;
+          n.x = left;
+          n.y = top
+          return n;
+        })
+      };
 
       // return mts;
   

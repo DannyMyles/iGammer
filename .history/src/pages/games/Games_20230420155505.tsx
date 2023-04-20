@@ -78,7 +78,7 @@ const Games = () => {
         console.table(c);
         c++;
 
-        if (c >= 100) {
+        if (c >= 1) {
           resolve(tiles);
           clearInterval(interval);
         }
@@ -101,29 +101,26 @@ const Games = () => {
       )
     )
       .then((tls) =>
-        randomizeTiles(
-          tls.map((url: string, i: number) => {
-            const tilePosition = solution[i];
-            const ts: TileState = {
-              top: `${tilePosition.y}px`,
-              left: `${tilePosition.x}px`,
-              tileIndex: tilePosition.tileIndex,
-              x: tilePosition.x,
-              y: tilePosition.y,
-              url: url,
-              index: i,
-              width: tileWidth,
-              height: tileWidth,
-            };
-            return ts;
-          }),
-          3,
-          tileWidth
-        )
+      tls.map((url: string, i: number) => {
+        const tilePosition = solution[i];
+        const ts: TileState = {
+          top: `${tilePosition.y}px`,
+          left: `${tilePosition.x}px`,
+          tileIndex: tilePosition.tileIndex,
+          x: tilePosition.x,
+          y: tilePosition.y,
+          url: url,
+          index: i,
+          width: tileWidth,
+          height: tileWidth,
+        };
+        return ts;
+      })
       )
       .then((tls) => {
         // const missingTile:TileState =
         setMissingTile(tls.pop());
+        console.log(missingTile);
         return shuffle(tls);
       })
       .then((tls) => setTiles(tls));

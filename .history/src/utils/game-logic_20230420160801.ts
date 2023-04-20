@@ -60,13 +60,37 @@ export function gameSolution(
   });
 }
 
-export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number){ 
+export function getMovableTiles(tiles:TileState[], missingTile:TilePosition, tileWidth:number):number[]{
+  const movableTileIndex = [];
+    for (let i = 0; i < tiles.length; i++) {
+      const c = tiles[i];
+      if (c.x === missingTile!.x && c.y + tileWidth === missingTile!.y) {
+        movableTileIndex.push(c.tileIndex);
+      }
 
-    // const movableTileIndex = getMovableTiles();
+      if (c.x === missingTile!.x && c.y - tileWidth === missingTile!.y) {
+        movableTileIndex.push(c.tileIndex);
+      }
+
+      if (c.y === missingTile!.y && c.x + tileWidth === missingTile!.x) {
+        movableTileIndex.push(c.tileIndex);
+      }
+
+      if (c.y === missingTile!.y && c.x - tileWidth === missingTile!.x) {
+        movableTileIndex.push(c.tileIndex);
+      }
+    }
+
+    return movableTileIndex;
+}
+
+export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number, missingTile:TilePosition){ 
+
+    const movableTileIndex:number[] = getMovableTiles(mts, missingTile, tileWidth);
     // console.log(movableTileIndex);
   
-    const tr1 = Math.floor(Math.random() * mts.length);
-      const tr2 = Math.floor(Math.random() * mts.length);
+    const tr1 = mts.findIndex(t=>t.tileIndex === missingTile.tileIndex); // Math.floor(Math.random() * mts.length);
+      const tr2 = mts.findIndex(t=>t.tileIndex === movableTileIndex[0]); // Math.floor(Math.random() * mts.length);
   
       // console.log(tr1, tr2);
   

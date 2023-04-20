@@ -14,13 +14,10 @@ const Games = () => {
   const [tilesPerRow, setTilesPerRow] = useState(3);
   const [tiles, setTiles] = useState<TileState[]>([]);
   const [missingTile, setMissingTile] = useState<TilePosition>();
-  const [boardWidth, setBoardWidth] = useState<number>(640);
   const [tileWidth, setTileWidth] = useState<number>( 640 / 3 )
 
-  const handleTileSelection = (tpr: any) => {
-    setTileWidth( boardWidth / tpr );
-    setTilesPerRow(tpr);
-    init();
+  const handleTileSelection = (tilesPerRow: any) => {
+    setTilesPerRow(tilesPerRow);
   };
 
   function move(tile: TileState) {
@@ -74,7 +71,7 @@ const Games = () => {
     return new Promise((resolve) => {
       let c = 0;
       const interval = setInterval(() => {
-        tiles = randomizeTiles(tiles, tilesPerRow, tileWidth);
+        tiles = randomizeTiles(tiles, 3, 640 / 3);
         console.table(c);
         c++;
 
@@ -86,8 +83,9 @@ const Games = () => {
     });
   }
 
-  function init(){
-    const solution: TilePosition[] = gameSolution(tilesPerRow, boardWidth);
+  useEffect(() => {
+    
+    const solution: TilePosition[] = gameSolution(3, 640);
     Promise.all(
       solution.map((tp) =>
         getTileImageUrl(
@@ -96,7 +94,7 @@ const Games = () => {
           tp.x,
           tp.y,
           "assets/images/msq.jpg",
-          boardWidth
+          640
         )
       )
     )
@@ -127,12 +125,6 @@ const Games = () => {
         return shuffle(tls);
       })
       .then((tls) => setTiles(tls));
-  }
-
-  useEffect(() => {
-    
-    init();
-    
   }, []);
 
   return (

@@ -60,20 +60,61 @@ export function gameSolution(
   });
 }
 
-export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number){ 
+export function getMovableTiles(tiles:TileState[], missingTile:TilePosition, tileWidth:number):number[]{
+  const movableTileIndex = [];
+    for (let i = 0; i < tiles.length; i++) {
+      const c = tiles[i];
+      if (c.x === missingTile!.x && c.y + tileWidth === missingTile!.y) {
+        movableTileIndex.push(c.tileIndex);
+      }
 
-    // const movableTileIndex = getMovableTiles();
-    // console.log(movableTileIndex);
+      if (c.x === missingTile!.x && c.y - tileWidth === missingTile!.y) {
+        movableTileIndex.push(c.tileIndex);
+      }
+
+      if (c.y === missingTile!.y && c.x + tileWidth === missingTile!.x) {
+        movableTileIndex.push(c.tileIndex);
+      }
+
+      if (c.y === missingTile!.y && c.x - tileWidth === missingTile!.x) {
+        movableTileIndex.push(c.tileIndex);
+      }
+    }
+
+    return movableTileIndex;
+}
+
+export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number, missingTile:TilePosition)
+{ 
+
   
-    const tr1 = Math.floor(Math.random() * mts.length);
-      const tr2 = Math.floor(Math.random() * mts.length);
+  // console.log(missingTile);
+  // console.table(mts);
+
+
+    // const movableTileIndex:number[] = getMovableTiles(mts, missingTile, tileWidth);
+    // console.log(missingTile, movableTileIndex);
+    // console.table(mts);
+    // if(movableTileIndex.length === 0){
+    //   return {
+    //     newMissing:missingTile,
+    //     tiles:mts
+    //   }
+    // }
   
-      // console.log(tr1, tr2);
+    const tr1 = Math.floor(Math.random() * mts.length); //mts.findIndex(t=>t.tileIndex === missingTile.tileIndex); // 
+      const tr2 = Math.floor(Math.random() * mts.length); //mts.findIndex(t=>t.tileIndex === movableTileIndex[0]); // 
+  
+      console.log(tr1, tr2);
   
       const holdingTile = {...mts[tr1]}
-      
       mts[tr1] = {...mts[tr2]};
-      mts[tr2] = {...holdingTile}
+      mts[tr2] = {...holdingTile};
+      // mts[tr1].top = mts[tr2].top;
+      // mts[tr1].left = mts[tr2].left;
+
+      // mts[tr2].top = holdingTile.top;
+      // mts[tr2].left = holdingTile.left;
 
       let top: number = 0;
       let left: number = 0;
@@ -92,7 +133,25 @@ export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:nu
         n.x = left;
         n.y = top
         return n;
-      });
+      })
+      // return {
+      //   newMissing:holdingTile,
+      //   tiles: mts.map((n, i) => {
+      //     left += Number(tileWidth);
+      //     if (i % tilesPerRow === 0) {
+      //       if (i >= tilesPerRow) {
+      //         top += Number(tileWidth);
+      //       }
+      
+      //       left = 0;
+      //     }
+      //     n.left = `${left}px`;
+      //     n.top = `${top}px`;
+      //     n.x = left;
+      //     n.y = top
+      //     return n;
+      //   })
+      // };
 
       // return mts;
   

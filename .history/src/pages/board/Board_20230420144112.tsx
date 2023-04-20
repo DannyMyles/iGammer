@@ -4,11 +4,14 @@ import { BoardProps, TilePosition, TileState } from "../../models/games.models";
 import { gameSolution, getTileImageUrl } from "../../utils/game-logic";
 
 interface BoardState{
-  tiles:TileState[],
-  move: Function
+  tiles:TileState[]
 }
 
-const Board = ({ tiles, move }: BoardState) => {
+const Board = ({ tiles }: BoardState) => {
+  
+  function move(tile:TileState){
+    console.log(tile);
+  }
 
   return (
     <div
@@ -30,7 +33,7 @@ const Board = ({ tiles, move }: BoardState) => {
       ))} */}
       {tiles.map((tile:TileState, i:number)=><img 
         key={i+1} 
-        style={{...tile, position:'absolute', border:'1px solid red'}} 
+        style={{...tile, position:'absolute'}} 
         alt={`t${tile.index}`} src={tile.url}
         width={tile.width}
         height={tile.height}

@@ -41,7 +41,7 @@ const Slider: React.FC<SliderProps> = () => {
         } else {
           setCurrentImageIndex(currentImageIndex + 1);
         }
-      }, 6000);
+      }, 5000);
     }
 
     return () => clearInterval(intervalId);

@@ -74,7 +74,7 @@ const Games = () => {
     return new Promise((resolve) => {
       let c = 0;
       const interval = setInterval(() => {
-        tiles = randomizeTiles(tiles, tilesPerRow, tileWidth);
+        tiles = randomizeTiles(tiles, tilesPerRow, tileWidth, missingTile!);
         console.table(c);
         c++;
 

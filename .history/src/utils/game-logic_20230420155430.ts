@@ -60,7 +60,7 @@ export function gameSolution(
   });
 }
 
-export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number){ 
+export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number, missingTile:TilePosition){ 
 
     // const movableTileIndex = getMovableTiles();
     // console.log(movableTileIndex);

@@ -73,16 +73,20 @@ const Games = () => {
   function shuffle(tiles: TileState[]): Promise<TileState[]> {
     return new Promise((resolve) => {
       let c = 0;
-      const interval = setInterval(() => {
+      while(c < 10){
         tiles = randomizeTiles(tiles, tilesPerRow, tileWidth);
-        console.table(c);
-        c++;
+      }
+      return tiles;
+      // const interval = setInterval(() => {
+      //   tiles = randomizeTiles(tiles, tilesPerRow, tileWidth);
+      //   console.table(c);
+      //   c++;
 
-        if (c >= 100) {
-          resolve(tiles);
-          clearInterval(interval);
-        }
-      }, 2);
+      //   if (c >= 100) {
+      //     resolve(tiles);
+      //     clearInterval(interval);
+      //   }
+      // }, 2);
     });
   }
 
