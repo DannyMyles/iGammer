@@ -1,0 +1,31 @@
+.modal {
+    background-color: #fff;
+    align-self: center;
+    padding: 14px;
+    border-radius: 10px;
+  }
+  
+  .modal:has(div.modal-position) {
+    align-self: flex-end;
+    margin: auto;
+    border-radius: 2rem;
+  }
+  
+  .modalBackground:has(div.modal-position) {
+    justify-content: flex-end;
+  }
+  
+  .cancelIcon button {
+    margin-bottom: 5px;
+    float: right;
+    /* border: none; */
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 480px) {
+    .modal:has(div.modal-position) {
+      margin: 0 2em 3em 1rem;
+      padding: 0.9rem;
+    }
+  }
