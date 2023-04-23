@@ -9,9 +9,9 @@ import { useGetAllImagesByUserQuery } from "../../../app/services";
 const BrowseGames = () => {
   const navigate = useNavigate();
   const auth = useAuth()
- const { data: images } = useGetAllImagesByUserQuery(auth?.user?.id)
+ const { data: images } = useGetAllImagesByUserQuery(auth.user.id)
 //  console.log("ID", JSON.parse(localStorage.getItem('auth')))
-console.log("Data", images) 
+console.log("Data", data) 
   // Navigation to Campaigns
   const navigateToPlay = () => {
     navigate("/Games");

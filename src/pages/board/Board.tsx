@@ -30,7 +30,7 @@ const Board = ({ tiles, move }: BoardState) => {
       ))} */}
       {tiles.map((tile:TileState, i:number)=><img 
         key={i+1} 
-        style={{...tile, position:'absolute', border:'1px solid red'}} 
+        style={{...tile, position:'absolute',}}  //border:'1px solid red'}} 
         alt={`t${tile.index}`} src={tile.url}
         width={tile.width}
         height={tile.height}

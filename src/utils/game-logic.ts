@@ -46,7 +46,6 @@ export function gameSolution(
   const totalTiles = tilesPerRow ** 2;
   let top: number = 0;
   let left: number = 0;
-  // console.log((new Array(totalTiles).fill(0)))
   return new Array(totalTiles).fill(0).map((n, i) => {
     left += Number(tileWidth);
     if (i % tilesPerRow === 0) {
@@ -61,15 +60,8 @@ export function gameSolution(
 }
 
 export function randomizeTiles(mts:TileState[], tilesPerRow:number, tileWidth:number){ 
-
-    // const movableTileIndex = getMovableTiles();
-    // console.log(movableTileIndex);
-  
     const tr1 = Math.floor(Math.random() * mts.length);
       const tr2 = Math.floor(Math.random() * mts.length);
-  
-      // console.log(tr1, tr2);
-  
       const holdingTile = {...mts[tr1]}
       
       mts[tr1] = {...mts[tr2]};

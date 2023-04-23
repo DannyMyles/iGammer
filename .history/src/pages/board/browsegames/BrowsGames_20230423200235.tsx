@@ -2,16 +2,17 @@ import Footer from "../../../components/footer/Footer";
 import Navbar from "../../../components/navbar/Navbar";
 import "./browsgames.css";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../hooks";
-import { useGetAllImagesByUserQuery } from "../../../app/services";
+import { useGetAllImagesByUserQuery } from "../../../app/services/gameApi";
 
-
-const BrowseGames = () => {
+interface ImageProps{
+  userId: string
+}
+const BrowseGames = ({userId}:ImageProps) => {
   const navigate = useNavigate();
-  const auth = useAuth()
- const { data: images } = useGetAllImagesByUserQuery(auth?.user?.id)
-//  console.log("ID", JSON.parse(localStorage.getItem('auth')))
-console.log("Data", images) 
+  const { data: images, isLoading, isError } = useGetAllImagesByUserQuery(userId);
+  if(isLoading) return <div>Loading.... </div>;
+  if(isError) return <div>Error</div>;
+
   // Navigation to Campaigns
   const navigateToPlay = () => {
     navigate("/Games");
@@ -22,6 +23,13 @@ console.log("Data", images)
       <h2 className="h2">Browse Your Games</h2>
       <div className="browse-container">
         <div className="image">
+          {
+            images.map((images:any) =>(
+              <ul>
+                <li>{images.id}</li>
+              </ul>
+            ))
+          }
           <img
             className="image__img"
             src="/assets/images/m1.jpg"

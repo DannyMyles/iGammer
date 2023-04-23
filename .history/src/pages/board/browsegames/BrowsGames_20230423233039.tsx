@@ -5,31 +5,42 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../hooks";
 import { useGetAllImagesByUserQuery } from "../../../app/services";
 
-
 const BrowseGames = () => {
   const navigate = useNavigate();
-  const auth = useAuth()
- const { data: images } = useGetAllImagesByUserQuery(auth?.user?.id)
-//  console.log("ID", JSON.parse(localStorage.getItem('auth')))
-console.log("Data", images) 
+  const auth = useAuth();
+  const {
+    data: images,
+    isLoading,
+    isError,
+  } = useGetAllImagesByUserQuery(auth?.user?.id);
+  if (isLoading) return <div>Loading....</div>;
+  if (isError) return <div>Oops! Error loading</div>;
+
   // Navigation to Campaigns
   const navigateToPlay = () => {
     navigate("/Games");
   };
-  return ( 
+  return (
     <>
       <Navbar />
       <h2 className="h2">Browse Your Games</h2>
       <div className="browse-container">
         <div className="image">
-          <img
-            className="image__img"
-            src="/assets/images/m1.jpg"
-            alt="backgrounImage"
-          />
+          {images.data.map((image: string) => (
+            <div className="image-container">
+              <img className="image__img" src={images} alt="backgrounImage" />
+            </div>
+          ))}
+
           <div className="image__overlay image__overlay--blur">
             <div className="image__title">New Game</div>
-            <button className="image__description" type="submit" onClick={navigateToPlay}>Continue Playing</button>
+            <button
+              className="image__description"
+              type="submit"
+              onClick={navigateToPlay}
+            >
+              Continue Playing
+            </button>
           </div>
         </div>
         <div className="image">
@@ -73,7 +84,13 @@ console.log("Data", images)
           />
           <div className="image__overlay image__overlay--blur">
             <div className="image__title">Game closed</div>
-            <button className="image__description" type="submit" onClick={navigateToPlay}>Continue Playing</button>
+            <button
+              className="image__description"
+              type="submit"
+              onClick={navigateToPlay}
+            >
+              Continue Playing
+            </button>
           </div>
         </div>
         <div className="image">
@@ -84,10 +101,15 @@ console.log("Data", images)
           />
           <div className="image__overlay image__overlay--blur">
             <div className="image__title">Game closed</div>
-            <button className="image__description" type="submit" onClick={navigateToPlay}>Continue Playing</button>
+            <button
+              className="image__description"
+              type="submit"
+              onClick={navigateToPlay}
+            >
+              Continue Playing
+            </button>
           </div>
         </div>
-       
       </div>
       <Footer />
     </>

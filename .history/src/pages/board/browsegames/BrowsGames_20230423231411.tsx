@@ -2,16 +2,16 @@ import Footer from "../../../components/footer/Footer";
 import Navbar from "../../../components/navbar/Navbar";
 import "./browsgames.css";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../hooks";
-import { useGetAllImagesByUserQuery } from "../../../app/services";
+import { json } from "stream/consumers";
+// import { useGetAllImagesByUserQuery } from "../../../app/services";
 
-
+// interface ImageProps{
+//   userId: string
+// }
 const BrowseGames = () => {
   const navigate = useNavigate();
-  const auth = useAuth()
- const { data: images } = useGetAllImagesByUserQuery(auth?.user?.id)
-//  console.log("ID", JSON.parse(localStorage.getItem('auth')))
-console.log("Data", images) 
+//  const { data: images } = useGetAllImagesByUserQuery(localStorage.auth.id)
+ console.log("ID", JSON.parse(localStorage.getItem('auth')))
   // Navigation to Campaigns
   const navigateToPlay = () => {
     navigate("/Games");
